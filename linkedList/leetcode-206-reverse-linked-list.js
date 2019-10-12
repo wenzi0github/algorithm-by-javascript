@@ -28,12 +28,12 @@ var reverseList = function (head) {
     if (!head || !head.next) {
         return head;
     }
-    
+
     var nextNode = head.next;
     var temp;
 
     head.next = null;
-    while(nextNode) {
+    while (nextNode) {
         temp = nextNode.next;
         nextNode.next = head;
         head = nextNode;
@@ -50,7 +50,7 @@ var reverseList = function (head) {
 
     const list = [];
     let p = head;
-    while(p) {
+    while (p) {
         let temp = p.next;
         p.next = null;
         list.push(p);
@@ -59,7 +59,7 @@ var reverseList = function (head) {
     let i = list.length - 1;
     head = list[i];
     let q = head;
-    while(i--) {
+    while (i--) {
         p = list[i];
         q.next = p;
         q = p;
