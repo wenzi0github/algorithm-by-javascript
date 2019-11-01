@@ -12,6 +12,8 @@
 
 十大经典排序算法，JavaScript实现，有动图演示。
 
+相关的博客地址：[十大经典排序算法(javascript实现)](https://www.xiabingbao.com/post/sort/javascript-10-sort.html)
+
 1. 冒泡排序；
 2. 选择排序；
 3. 插入排序；
