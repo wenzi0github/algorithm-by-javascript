@@ -1,6 +1,6 @@
 # algorithm by javascript
 
-# 使用JavaScript实现的算法
+# 使用 JavaScript 实现的算法
 
 ### 数组
 
@@ -10,9 +10,9 @@
 
 ### 排序
 
-十大经典排序算法，JavaScript实现，有动图演示。
+十大经典排序算法，JavaScript 实现，有动图演示。
 
-相关的博客地址：[十大经典排序算法(javascript实现)](https://www.xiabingbao.com/post/sort/javascript-10-sort.html)
+相关的博客地址：[十大经典排序算法(javascript 实现)](https://www.xiabingbao.com/post/sort/javascript-10-sort.html)
 
 1. 冒泡排序；
 2. 选择排序；
@@ -31,3 +31,5 @@
 2. 合并两个链表；
 3. 查找链表是否存在环；
 4. 翻转链表；
+
+### 动态规划
