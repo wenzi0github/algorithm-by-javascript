@@ -33,3 +33,9 @@
 4. 翻转链表；
 
 ### 动态规划
+
+1. 爬楼梯
+
+### 字符串
+
+[1047. 删除字符串中的所有相邻重复项](./string/leetcode-1047-remove-all-adjacent-duplicates-in-string.js)
