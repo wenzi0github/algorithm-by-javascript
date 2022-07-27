@@ -2,44 +2,98 @@
 
 # 使用 JavaScript 实现的算法
 
-### 树
+我们在平时的工作和算法 coding 中，经常会用到一些算法，这里将一些常用的算法总结下。
 
-leetcode 中关于树的相关算法题目有很多，但网站给出的样例都是以数组的形式，本地测试时不太方便。这里我写一个转换工具，可以将数组转为二叉树：[array2tree](./tree/README.md)
+## 一般算法
 
-### 数组
+### 最大公约数
 
-1. 数组的基础用法；
-2. 数组混乱排序；
-3. 对数组去重
+获取两个数的最大公约数
 
-### 排序
+```javascript
+import { gcd } from '@wen/algorithm.js';
 
-十大经典排序算法，JavaScript 实现，有动图演示。
+gcd(6, 4); // 2
+```
 
-相关的博客地址：[十大经典排序算法(javascript 实现)](https://www.xiabingbao.com/post/sort/javascript-10-sort.html)
+## 数组
 
-1. 冒泡排序；
-2. 选择排序；
-3. 插入排序；
-4. 希尔排序；
-5. 归并排序；
-6. 快速排序；
-7. 堆排序；
-8. 计数排序；
-9. 桶排序；
-10. 基数排序；
+### 合并两个有序数
 
-### 链表
+合并两个有序数组成新的有序数组。
 
-1. 两个链表中的数据相加；
-2. 合并两个链表；
-3. 查找链表是否存在环；
-4. 翻转链表；
+```javascript
+import { mergeSortedArray } from '@wen/algorithm.js';
 
-### 动态规划
+mergeSortedArray([1, 3, 5], [2, 4, 6, 8]); // [1, 2, 3, 4, 5, 6, 8]
+```
 
-1. 爬楼梯
+### 删除数组中的重复项
 
-### 字符串
+删除数组中的重复项，若合并后依然有重复项，继续删除。
 
-[1047. 删除字符串中的所有相邻重复项](./string/leetcode-1047-remove-all-adjacent-duplicates-in-string.js)
+- 第 1 个参数：要删除重复数据的数组；
+- 第 2 个参数：重复几个就可以删除，默认为 2；
+
+```javascript
+import { removeDuplicates } from '@wen/algorithm.js';
+
+removeDuplicates([1, 1, 2, 2, 2, 2, 1, 1, 3], 3); // [3]
+```
+
+## 字符串
+
+## 数字
+
+### 质数相关
+
+#### 判断是否为质数
+
+```javascript
+import { isPrime } from '@wen/algorithm.js';
+
+isPrime(10); // false
+isPrime(11); // true
+```
+
+#### 统计不大于某数的质数的个数
+
+```javascript
+import { countPrimeEqualOrLessNum } from '@wen/algorithm.js';
+
+countPrimeEqualOrLessNum(20); // 8
+countPrimeEqualOrLessNum(100); // 25
+```
+
+#### 获取不大于某数的所有质数
+
+```javascript
+import { getAllPrimesEqualOrLessNum } from '@wen/algorithm.js';
+
+getAllPrimesEqualOrLessNum(1); // []
+getAllPrimesEqualOrLessNum(10); // [2, 3, 5, 7]
+getAllPrimesEqualOrLessNum(20); // [2, 3, 5,7, 11, 13, 17, 19]
+```
+
+## 链表
+
+## 树
+
+### 二叉树
+
+### 是否子树
+
+### 前缀树的插入和搜索
+
+- search(word, isWord): 在前缀树中查找单词，若 isWord 为 true，则必须是完整的单词，默认为 false；
+- insert(word): 在前缀树中插入单词；
+
+```javascript
+import { TrieTree } from '@wen/algorithm.js';
+
+const trie = new TrieTree(['cat', 'bat', 'rat', 'cabt']);
+trie.search('ca'); // true
+trie.search('ca', true); // false, 前缀树中没有完整的ca单词
+trie.insert('aabb');
+trie.search('aabb', true); // true
+```
