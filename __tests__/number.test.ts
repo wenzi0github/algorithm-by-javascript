@@ -1,4 +1,4 @@
-import { isPrime, countPrimeEqualOrLessNum, getAllPrimesEqualOrLessNum } from '../src/number';
+import { isPrime, countPrimeEqualOrLessNum, getAllPrimesEqualOrLessNum } from '../src/libs/number';
 
 describe('test isPrime util', () => {
   test('should get true when num is prime', () => {

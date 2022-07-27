@@ -1,4 +1,4 @@
-import { mergeSortedArray, removeDuplicates } from '../src/array';
+import { mergeSortedArray, removeDuplicates } from '../src/libs/array';
 
 describe('test mergeSortedArray util', () => {
   test('should get sorted array', () => {

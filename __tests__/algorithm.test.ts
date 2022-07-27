@@ -1,4 +1,4 @@
-import { gcd } from '../src/algorithm';
+import { gcd } from '../src/libs/algorithm';
 
 describe('test gcd function', () => {
   test('should get greatest common divisor', () => {

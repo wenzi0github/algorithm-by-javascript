@@ -1,4 +1,4 @@
-import { TrieTree } from '../src/tree';
+import { TrieTree } from '../src/libs/tree';
 
 describe('test TrieTree', () => {
   test('should get true when search prefix word', () => {
