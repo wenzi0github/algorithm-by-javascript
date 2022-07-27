@@ -110,9 +110,9 @@ export class TrieTree {
     const aCode = 'a'.charCodeAt(0);
     const { length } = word;
 
-    const find = (curIndex: number): boolean => {
+    const find = (node: TrieNode, curIndex = 0): boolean => {
       const kCode = word[curIndex].charCodeAt(0) - aCode;
-      const child = this.root.childNodes[kCode];
+      const child = node.childNodes[kCode];
 
       if (child) {
         if (curIndex === length - 1) {
@@ -120,11 +120,11 @@ export class TrieTree {
           // 若不需要判断，则直接返回true即可
           return isWord ? child.isWord : true;
         }
-        return find(curIndex + 1);
+        return find(child, curIndex + 1);
       }
       return false;
     };
 
-    return find(0);
+    return find(this.root);
   }
 }
