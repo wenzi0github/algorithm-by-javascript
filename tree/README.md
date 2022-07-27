@@ -25,7 +25,7 @@ const array2binary = (arr) => {
         return null;
     }
     let index = 0;
-    let queue = [];
+    const queue = [];
     const len = arr.length;
     const head = new TreeNode(arr[index]);
     queue.push(head);
