@@ -3,6 +3,11 @@
   "name": "@wen/algorithm.js",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "description": "algorithm by javascript",
+  "homepage": "https://github.com/wenzi0github/algorithm-by-javascript",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "test": "jest --coverage=true --detectOpenHandles",
