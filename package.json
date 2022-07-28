@@ -1,6 +1,6 @@
 {
   "version": "0.0.1",
-  "name": "@wen/algorithm.js",
+  "name": "@xiaowenzi/algorithm.js",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "description": "algorithm by javascript",
@@ -11,7 +11,8 @@
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "test": "jest --coverage=true --detectOpenHandles",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "publish": "npm publish --access public"
   },
   "devDependencies": {
     "@types/jest": "^28.1.6",
