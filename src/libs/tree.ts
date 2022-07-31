@@ -1,9 +1,9 @@
-class TreeNode {
-  val: any = null;
+class TreeNode<T = any> {
+  val: T;
   left: TreeNode | null = null;
   right: TreeNode | null = null;
 
-  constructor(val: any) {
+  constructor(val: T) {
     this.val = val;
     this.left = this.right = null;
   }
@@ -46,6 +46,107 @@ export const array2binary = (arr: any[]) => {
     }
   }
   return head;
+};
+
+/**
+ * 获取二叉树的前序遍历
+ * @param root 二叉树的根节点
+ */
+export const getTreeByPreOrder = <T>(root: TreeNode<T>): T[] => {
+  let list: T[] = [];
+
+  if (root) {
+    list.push(root.val);
+
+    if (root.left) {
+      list = list.concat(getTreeByPreOrder(root.left));
+    }
+    if (root.right) {
+      list = list.concat(getTreeByPreOrder(root.right));
+    }
+  }
+
+  return list;
+};
+
+/**
+ * 获取二叉树的前序遍历
+ * @param root 二叉树的根节点
+ */
+export const getTreeByMidOrder = <T>(root: TreeNode<T>) => {
+  let list: T[] = [];
+
+  if (root) {
+    if (root.left) {
+      list = list.concat(getTreeByMidOrder(root.left));
+    }
+    list.push(root.val);
+    if (root.right) {
+      list = list.concat(getTreeByMidOrder(root.right));
+    }
+  }
+
+  return list;
+};
+
+/**
+ * 获取二叉树的前序遍历
+ * @param root 二叉树的根节点
+ */
+export const getTreeByPostOrder = <T>(root: TreeNode<T>) => {
+  let list: T[] = [];
+
+  if (root) {
+    if (root.left) {
+      list = list.concat(getTreeByMidOrder(root.left));
+    }
+    if (root.right) {
+      list = list.concat(getTreeByMidOrder(root.right));
+    }
+    list.push(root.val);
+  }
+
+  return list;
+};
+
+/**
+ * 获取二叉树的层序遍历
+ * @param root 二叉树的根节点
+ * @param isFlat 是否扁平化输出
+ */
+export const getTreeByLevelOrder = <T>(root: TreeNode<T>) => {
+  const list: T[][] = [];
+
+  if (!root) {
+    return list;
+  }
+
+  const queue: { node: TreeNode<T>; depth: number }[] = [];
+  queue.push({ node: root, depth: 1 });
+
+  let curDepth = 1;
+  let curList: T[] = [];
+  while (queue.length) {
+    const item = queue.shift();
+    if (!item) {
+      break;
+    }
+    const { node, depth } = item;
+    if (depth !== curDepth) {
+      // 不在同一层
+      list.push(curList.slice());
+      curList = [];
+    }
+    curList.push(node.val);
+    if (node.left) {
+      queue.push({ node: node.left, depth: depth + 1 });
+    }
+    if (node.right) {
+      queue.push({ node: node.right, depth: depth + 1 });
+    }
+  }
+  list.push(curList);
+  return list;
 };
 
 class TrieNode {
