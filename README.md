@@ -11,7 +11,7 @@
 获取两个数的最大公约数
 
 ```javascript
-import { gcd } from '@wen/algorithm.js';
+import { gcd } from '@xiaowenzi/algorithm.js';
 
 gcd(6, 4); // 2
 ```
@@ -23,7 +23,7 @@ gcd(6, 4); // 2
 合并两个有序数组成新的有序数组。
 
 ```javascript
-import { mergeSortedArray } from '@wen/algorithm.js';
+import { mergeSortedArray } from '@xiaowenzi/algorithm.js';
 
 mergeSortedArray([1, 3, 5], [2, 4, 6, 8]); // [1, 2, 3, 4, 5, 6, 8]
 ```
@@ -36,7 +36,7 @@ mergeSortedArray([1, 3, 5], [2, 4, 6, 8]); // [1, 2, 3, 4, 5, 6, 8]
 - 第 2 个参数：连续重复几个就可以删除，默认为 2；
 
 ```javascript
-import { removeDuplicates } from '@wen/algorithm.js';
+import { removeDuplicates } from '@xiaowenzi/algorithm.js';
 
 removeDuplicates([1, 1, 2, 2, 2, 2, 1, 1, 3], 3); // [3]
 ```
@@ -50,7 +50,7 @@ removeDuplicates([1, 1, 2, 2, 2, 2, 1, 1, 3], 3); // [3]
 #### 判断是否为质数
 
 ```javascript
-import { isPrime } from '@wen/algorithm.js';
+import { isPrime } from '@xiaowenzi/algorithm.js';
 
 isPrime(10); // false
 isPrime(11); // true
@@ -59,7 +59,7 @@ isPrime(11); // true
 #### 统计不大于某数的质数的个数
 
 ```javascript
-import { countPrimeEqualOrLessNum } from '@wen/algorithm.js';
+import { countPrimeEqualOrLessNum } from '@xiaowenzi/algorithm.js';
 
 countPrimeEqualOrLessNum(20); // 8
 countPrimeEqualOrLessNum(100); // 25
@@ -68,7 +68,7 @@ countPrimeEqualOrLessNum(100); // 25
 #### 获取不大于某数的所有质数
 
 ```javascript
-import { getAllPrimesEqualOrLessNum } from '@wen/algorithm.js';
+import { getAllPrimesEqualOrLessNum } from '@xiaowenzi/algorithm.js';
 
 getAllPrimesEqualOrLessNum(1); // []
 getAllPrimesEqualOrLessNum(10); // [2, 3, 5, 7]
@@ -89,7 +89,7 @@ getAllPrimesEqualOrLessNum(20); // [2, 3, 5,7, 11, 13, 17, 19]
 - insert(word): 在前缀树中插入单词；
 
 ```javascript
-import { TrieTree } from '@wen/algorithm.js';
+import { TrieTree } from '@xiaowenzi/algorithm.js';
 
 const trie = new TrieTree(['cat', 'bat', 'rat', 'cabt']);
 trie.search('ca'); // true
