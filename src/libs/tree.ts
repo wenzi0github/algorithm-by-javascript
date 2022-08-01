@@ -112,7 +112,6 @@ export const getTreeByPostOrder = <T>(root: TreeNode<T>) => {
 /**
  * 获取二叉树的层序遍历
  * @param root 二叉树的根节点
- * @param isFlat 是否扁平化输出
  */
 export const getTreeByLevelOrder = <T>(root: TreeNode<T>) => {
   const list: T[][] = [];
@@ -147,6 +146,49 @@ export const getTreeByLevelOrder = <T>(root: TreeNode<T>) => {
   }
   list.push(curList);
   return list;
+};
+
+/**
+ * 翻转二叉树
+ * @param root 二叉树的根节点
+ */
+export const reverseTree = <T>(root: TreeNode<T> | null) => {
+  if (!root) {
+    return root;
+  }
+  const left = reverseTree(root.left);
+  const right = reverseTree(root.right);
+  root.left = right;
+  root.right = left;
+  return root;
+};
+
+/**
+ * 判断二叉树是否左右对称
+ * @param root 二叉树的根节点
+ * @returns {boolean}
+ */
+export const isSymmetricTree = <T>(root: TreeNode<T> | null): boolean => {
+  if (!root) {
+    return true;
+  }
+
+  /**
+   * 判断当前左右两个分支是否对称
+   * @param left 左分支
+   * @param right 右分支
+   * @returns {boolean}
+   */
+  const check = (left: TreeNode<T> | null, right: TreeNode<T> | null): boolean => {
+    if (!left && !right) {
+      return true;
+    }
+    if (!left || !right || left.val !== right.val) {
+      return false;
+    }
+    return check(left.left, right.right) && check(left.right, right.left);
+  };
+  return check(root.left, root.right);
 };
 
 class TrieNode {
