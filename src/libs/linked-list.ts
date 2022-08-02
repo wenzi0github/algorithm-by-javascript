@@ -9,22 +9,23 @@
 //     this.next = null;
 //   }
 // }
-interface ListNext {
-  // val: T;
-  next: ListNext | null;
+interface ListNode<T> {
+  val: T;
+  next: ListNode<T> | null;
 }
 
 /**
  * 判断链表是否有环
  * @param head 链表
  */
-export const hasCycleLinkedList = <T extends ListNext>(head: T) => {
-  let fast = head; // 快指针
-  let slow = head; // 慢指针
+export const hasCycleLinkedList = <T>(head: ListNode<T> | null) => {
+  let fast: ListNode<T> | null = head; // 快指针
+  let slow: ListNode<T> | null = head; // 慢指针
 
-  while (fast && fast.next) {
-    slow = slow.next as T;
-    fast = fast.next.next as T;
+  // not need check slow type in fact, but will show error in typescript
+  while (slow && fast && fast.next) {
+    fast = fast.next.next;
+    slow = slow.next;
 
     if (slow === fast) {
       return true;
@@ -47,19 +48,26 @@ export const getCycleNodeLinkedList = (head: any) => {};
  * 翻转链表
  * @param head 链表
  */
-export const reverseLinkedList = <T extends ListNext>(head: T | null): T | null => {
+export const reverseLinkedList = <T>(head: ListNode<T> | null): ListNode<T> | null => {
   if (head === null || head.next === null) {
     return head;
   }
 
-  const newHead = reverseLinkedList(head.next); // 反转后的头节点
-  head.next.next = head; // 将反转后的链表的尾节点与当前节点相连
-  head.next = null;
-  return newHead as T;
-  // while (head && head.next) {
-  //   const next = head.next;
-  //   head.next.next = head;
-  //   head = next;
-  // }
-  // return head.next as T;
+  // recursion
+  // const newHead = reverseLinkedList(head.next); // 反转后的头节点
+  // head.next.next = head; // 将反转后的链表的尾节点与当前节点相连
+  // head.next = null;
+  // return newHead;
+
+  // loop
+  // https://segmentfault.com/a/1190000037518253
+  let prev: ListNode<T> | null = null;
+  let curr: ListNode<T> | null = head;
+  while (curr) {
+    const next: ListNode<T> | null = curr.next;
+    curr.next = prev;
+    prev = curr;
+    curr = next;
+  }
+  return prev;
 };
