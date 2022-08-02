@@ -98,10 +98,10 @@ export const getTreeByPostOrder = <T>(root: TreeNode<T>) => {
 
   if (root) {
     if (root.left) {
-      list = list.concat(getTreeByMidOrder(root.left));
+      list = list.concat(getTreeByPostOrder(root.left));
     }
     if (root.right) {
-      list = list.concat(getTreeByMidOrder(root.right));
+      list = list.concat(getTreeByPostOrder(root.right));
     }
     list.push(root.val);
   }
