@@ -48,5 +48,12 @@ class Stack<T> {
   size(): number {
     return this.list.length;
   }
+
+  /**
+   * 清空数据
+   */
+  clear() {
+    this.list.length = 0;
+  }
 }
 export default Stack;
