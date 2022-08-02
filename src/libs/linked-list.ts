@@ -47,7 +47,7 @@ export const getCycleNodeLinkedList = (head: any) => {};
  * 翻转链表
  * @param head 链表
  */
-export const reverseLinkedList = <T extends ListNext>(head: T): T => {
+export const reverseLinkedList = <T extends ListNext>(head: T | null): T | null => {
   if (head === null || head.next === null) {
     return head;
   }
@@ -56,4 +56,10 @@ export const reverseLinkedList = <T extends ListNext>(head: T): T => {
   head.next.next = head; // 将反转后的链表的尾节点与当前节点相连
   head.next = null;
   return newHead as T;
+  // while (head && head.next) {
+  //   const next = head.next;
+  //   head.next.next = head;
+  //   head = next;
+  // }
+  // return head.next as T;
 };
