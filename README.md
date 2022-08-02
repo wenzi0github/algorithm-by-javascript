@@ -145,7 +145,7 @@ getTreeByLevelOrder(root); // 层序遍历，返回的是一个二维数组，�
 
 这个题目出名的原因，是因为 homebrew 的作者 Max Howell 面试谷歌时因为没在白板上写出反转二叉树的算法，结果面试面试挂掉了。
 
-![leetcode-invert-binary-tree](https://www.xiabingbao.com/algorithm/2015/06/17/invert-binary-tree.html)
+[leetcode-invert-binary-tree](https://www.xiabingbao.com/algorithm/2015/06/17/invert-binary-tree.html)
 
 ```javascript
 import { reverseTree } from '@xiaowenzi/algorithm.js';
