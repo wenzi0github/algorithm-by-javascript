@@ -1,14 +1,5 @@
 // 链表相关
 
-// type class ListNode<T> {
-//   val: T | null = null;
-//   next: ListNode<T> | null = null;
-
-//   constructor(val: T) {
-//     this.val = val;
-//     this.next = null;
-//   }
-// }
 interface ListNode<T> {
   val: T;
   next: ListNode<T> | null;

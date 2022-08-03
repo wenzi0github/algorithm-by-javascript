@@ -5,7 +5,7 @@
  * @returns {number}
  */
 export const gcd = (a: number, b: number): number => {
-  let c: number = 0;
+  let c = 0;
 
   while (a % b != 0) {
     c = a % b;
