@@ -177,3 +177,25 @@ trie.search('ca', true); // false, 前缀树中没有完整的ca单词
 trie.insert('aabb');
 trie.search('aabb', true); // true
 ```
+
+## 栈
+
+## 队列
+
+先进先出的数据结构，内部我们是用链表来实现的。
+
+```javascript
+import { Queue } from '@xiaowenzi/algorithm.js';
+
+const queue = new Queue();
+const limitQueue = new Queue(5);
+```
+
+初始化时，可以传入一个数字，表示队列空间的大小（比如传入一个数字 5），当超过限制时（当压入第 6 个数据时），则会无法添加。默认不传参数，没有限制。
+
+- push(): 添加元素；
+- pop(): 头部删除元素并返回；
+- front(): 返回头部元素，若没有元素则返回 null；
+- end(): 返回尾部元素，若没有元素则返回 null；
+- empty(): 判断队列是否为空；
+- size(): 获取队列的长度；
