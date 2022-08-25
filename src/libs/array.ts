@@ -91,3 +91,28 @@ export const removeDuplicates = <T = number>(arr: T[], duplicatedNum = 2): T[] =
   }
   return result;
 };
+
+/**
+ * 二分查找，返回value在数组中的下标，若找不到则返回-1
+ * @param arr 数组
+ * @return {number} value在数组中的下标
+ */
+export const binarySearch = <T = number>(arr: T[], value: T): number => {
+  // 调用方需自己保证数组的有序性
+  const { length } = arr;
+  let i = 0;
+  let j = length - 1;
+
+  while (i < j) {
+    const mid = i + Math.floor(j - i) / 2; // js中其实不用考虑整数的上限限制，不过这样写会规范一些
+    if (arr[mid] === value) {
+      return mid;
+    }
+    if (arr[mid] > value) {
+      j = mid - 1;
+    } else {
+      i = mid + 1;
+    }
+  }
+  return -1;
+};

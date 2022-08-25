@@ -1,4 +1,4 @@
-import { mergeSortedArray, removeDuplicates } from '../src/libs/array';
+import { mergeSortedArray, removeDuplicates, binarySearch } from '../src/libs/array';
 
 describe('test mergeSortedArray util', () => {
   test('should get sorted array', () => {
@@ -23,5 +23,14 @@ describe('test removeDuplicates util', () => {
     expect(removeDuplicates([1, 1, 2, 2, 2, 2, 1, 1, 3], 3)).toEqual([3]);
     expect(removeDuplicates([1, 1, 2, 2, 2, 2, 1, 1], 3)).toEqual([]);
     expect(removeDuplicates([1, 1], 3)).toEqual([1, 1]);
+  });
+});
+
+describe('test binarySearch util', () => {
+  test('should get cur index when value in arr', () => {
+    expect(binarySearch([1, 3, 5, 7], 1)).toBe(0);
+  });
+  test('should get -1 when value not in arr', () => {
+    expect(binarySearch([1, 3, 5, 7], 2)).toBe(-1);
   });
 });
