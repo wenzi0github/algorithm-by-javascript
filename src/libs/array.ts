@@ -116,3 +116,28 @@ export const binarySearch = <T = number>(arr: T[], value: T): number => {
   }
   return -1;
 };
+
+/**
+ * 从数组中获取最大的几个数据
+ * @param arr 数字
+ * @param limit 要找到几个数据
+ */
+export const getMaxFromArr = <T = number>(arr: T[], limit = 1): T[] => {
+  const { length } = arr;
+
+  if (limit <= 0 || length === 0) {
+    return [];
+  }
+  if (limit === 1) {
+    let maxValue = arr[0];
+    for (let i = 1; i < length; i++) {
+      if (arr[i] > maxValue) {
+        maxValue = arr[i];
+      }
+    }
+    return [maxValue];
+  }
+  const tempArr = arr.concat();
+  tempArr.sort((a, b) => (a >= b ? -1 : 1));
+  return tempArr.slice(0, limit);
+};
