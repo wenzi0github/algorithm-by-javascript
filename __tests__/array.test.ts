@@ -1,4 +1,4 @@
-import { mergeSortedArray, removeDuplicates, binarySearch } from '../src/libs/array';
+import { mergeSortedArray, removeDuplicates, binarySearch, getMaxFromArr } from '../src/libs/array';
 
 describe('test mergeSortedArray util', () => {
   test('should get sorted array', () => {
@@ -32,5 +32,18 @@ describe('test binarySearch util', () => {
   });
   test('should get -1 when value not in arr', () => {
     expect(binarySearch([1, 3, 5, 7], 2)).toBe(-1);
+  });
+});
+
+describe('test getMaxFromArr', () => {
+  test('should get top one max value', () => {
+    expect(getMaxFromArr([4, 3, 2, 5])).toEqual([5]);
+  });
+  test('should get top two max value', () => {
+    expect(getMaxFromArr([4, 3, 2, 5], 2)).toEqual([5, 4]);
+  });
+  test('should get null array when limit less then 1 or arr length less 1', () => {
+    expect(getMaxFromArr([4, 3, 2, 5], 0)).toEqual([]);
+    expect(getMaxFromArr([])).toEqual([]);
   });
 });
