@@ -103,8 +103,8 @@ export const binarySearch = <T = number>(arr: T[], value: T): number => {
   let i = 0;
   let j = length - 1;
 
-  while (i < j) {
-    const mid = i + Math.floor(j - i) / 2; // js中其实不用考虑整数的上限限制，不过这样写会规范一些
+  while (i <= j) {
+    const mid = i + Math.floor((j - i) / 2); // js中其实不用考虑整数的上限限制，不过这样写会规范一些
     if (arr[mid] === value) {
       return mid;
     }
