@@ -141,3 +141,14 @@ export const getMaxFromArr = <T = number>(arr: T[], limit = 1): T[] => {
   tempArr.sort((a, b) => (a >= b ? -1 : 1));
   return tempArr.slice(0, limit);
 };
+
+/**
+ * 创建二维数组
+ * @param {number} m
+ * @param {number} n
+ * @param {T} fillValue
+ */
+export const createTwoDimArr = <T>(m: number, n: number, fillValue: T) => {
+  const arr = new Array(m);
+  return arr.fill(0).map((_) => new Array(n).fill(fillValue));
+};
